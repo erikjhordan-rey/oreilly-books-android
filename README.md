@@ -1,16 +1,17 @@
 # O'Reilly Free Programming Books
 It's an android application created by developers for developers who would like to learn more about software or programming using O'Reilly Free Books.
 
+This example was created to support my talk on [Droidcon Santo Domingo 2017](http://droidcon.do/).
+
 I created an api from web scrapping, you can see my another open source project [oreilly-free-books-api](https://github.com/erikcaffrey/api-oreilly-free-books/tree/api-oreilly-free-v1) web application project
 used for expose [O'Reilly free programming ebooks](http://www.oreilly.com/programming/free/) via a web API.
 
+Project Goal
+---------------------------
 Oreilly free books for Android Developers, The main goal is to practice good practices, architecture and testing.
-
-This example was created to support my talk on [Droidcon Santo Domingo 2017](http://droidcon.do/).
 
 Do you want to contribute?
 --------------------------
-
 Feel free to report or add any useful feature, I will be glad to improve it with your help, before submitting your code please check the [codestyle](https://github.com/square/java-code-styles).
 
 Developed By
