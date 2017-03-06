@@ -3,8 +3,8 @@ It's an android application created by developers for developers who would like 
 
 This example was created to support my talk on [Droidcon Santo Domingo 2017](http://droidcon.do/).
 
-I created an api from web scrapping, you can see my another open source project [oreilly-free-books-api](https://github.com/erikcaffrey/api-oreilly-free-books/tree/api-oreilly-free-v1) web application project
-used for expose [O'Reilly free programming ebooks](http://www.oreilly.com/programming/free/) via a web API.
+You can see my another open source project [oreilly-free-books-api](https://github.com/erikcaffrey/api-oreilly-free-books/tree/api-oreilly-free-v1) is a web application project
+used to expose [O'Reilly free programming ebooks API](http://www.oreilly.com/programming/free/).
 
 Project Goal
 ---------------------------
