@@ -1,7 +1,7 @@
 # O'Reilly Free Programming Books
 It's an android application created by developers for developers who would like to learn more about software or programming using O'Reilly Free Books.
 
-This example was created to support my talk on [Droidcon Santo Domingo 2017](http://droidcon.do/).
+This example was created to support my [talk](https://speakerdeck.com/erikcaffrey/real-world-designing-maintainable-architecture-for-android) on [Droidcon Santo Domingo 2017](http://droidcon.do/).
 
 You can see my another open source project [oreilly-free-books-api](https://github.com/erikcaffrey/api-oreilly-free-books/tree/api-oreilly-free-v1) is a web application project
 used to expose [O'Reilly free programming ebooks API](http://www.oreilly.com/programming/free/).
