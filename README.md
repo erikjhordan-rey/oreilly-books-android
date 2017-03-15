@@ -1,5 +1,5 @@
 # IN PROGRESS!!
-# O'Reilly Free Programming Books
+# O'Reilly Free Programming Books [![Build Status](https://travis-ci.org/erikcaffrey/oreilly-books-android.svg?branch=master)](https://travis-ci.org/erikcaffrey/oreilly-books-android)
 It's an android application created by developers for developers who would like to learn more about software or programming using O'Reilly Free Books.
 
 This example was created to support my [talk](https://speakerdeck.com/erikcaffrey/real-world-designing-maintainable-architecture-for-android) on [Droidcon Santo Domingo 2017](http://droidcon.do/).
