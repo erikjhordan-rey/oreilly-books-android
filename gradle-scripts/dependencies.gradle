@@ -1,0 +1,83 @@
+ext{
+
+  //rootProject
+
+  minSdkVersion = 15
+  targetSdkVersion = 25
+  compileSdkVersion = 25
+  buildToolsVersion = '25.0.2'
+  versionCode = 1
+  versionName = '1.0'
+
+
+  // Support Libraries
+
+  supportPackage = 'com.android.support'
+  supportVersion = '25.1.0'
+
+  supportDependencies = [
+      appCompat : dependency(supportPackage, 'appcompat-v7', supportVersion),
+      design    : dependency(supportPackage, 'design', supportVersion)
+  ]
+
+
+  // Square Libraries
+
+  retrofitPackage = 'com.squareup.retrofit2'
+  retrofitVersion = '2.1.0'
+
+  okhttpPackage = 'com.squareup.okhttp3'
+  okhttpVersion = '3.4.1'
+
+  picassoPackage = 'com.squareup.picasso'
+  picassoVersion = '2.5.2'
+
+  squareDependencies = [
+      retrofit          : dependency(retrofitPackage, 'retrofit', retrofitVersion),
+      gsonConverter     : dependency(retrofitPackage, 'converter-gson', retrofitVersion),
+      loggingInterceptor: dependency(okhttpPackage, 'logging-interceptor', okhttpVersion),
+      okHttp            : dependency(okhttpPackage, 'okhttp', okhttpVersion),
+      picasso           : dependency(picassoPackage, 'picasso', picassoVersion)
+  ]
+
+  //RX Libraries dependencies
+
+  reactivePackage = 'io.reactivex.rxjava2'
+
+  rxJavaVersion = '2.0.2'
+  rxAndroidVersion = '2.0.1'
+
+  rxDependencies = [
+      rxJava   : dependency(reactivePackage, 'rxjava', rxJavaVersion),
+      rxAndroid: dependency(reactivePackage, 'rxandroid', rxAndroidVersion)
+  ]
+
+  //Dagger Libraries dependencies
+
+  daggerPackage = 'com.google.dagger'
+  javaxPackage = 'javax.annotation'
+
+  daggerVersion = '2.8'
+  javaxVersion = '1.0'
+
+
+  daggerDependencies = [
+      dagger             : dependency(daggerPackage,'dagger',daggerVersion),
+      daggerCompiler     : dependency(daggerPackage,'dagger-compiler',daggerVersion),
+      daggerAnnotations  : dependency(javaxPackage,'jsr250-api',javaxVersion)
+  ]
+
+
+  //Elemental dependencies
+
+  jakeWhartonPackage = 'com.jakewharton'
+  butterknifeVersion = '8.4.0'
+
+  butterknife = dependency(jakeWhartonPackage, 'butterknife', butterknifeVersion)
+  butterknifeCompiler = dependency(jakeWhartonPackage, 'butterknife-compiler', butterknifeVersion)
+
+}
+
+String dependency(String group, String name, String version) {
+  return "${group}:${name}:${version}"
+}

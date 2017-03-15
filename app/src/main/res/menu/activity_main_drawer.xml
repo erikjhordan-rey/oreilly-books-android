@@ -5,6 +5,7 @@
         <item
             android:id="@+id/nav_books"
             android:icon="@drawable/ic_menu_books"
+            android:checked="true"
             android:title="@string/menu_books" />
         <item
             android:id="@+id/nav_downloads"
