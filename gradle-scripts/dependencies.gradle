@@ -10,6 +10,12 @@ ext{
   versionName = '1.0'
 
 
+  // kotlin
+
+  jetbrainsPackage = 'org.jetbrains.kotlin'
+  kotlinStdlib7 = dependency(jetbrainsPackage, 'kotlin-stdlib-jre7', kotlin_version)
+
+
   // Support Libraries
 
   supportPackage = 'com.android.support'
@@ -78,6 +84,6 @@ ext{
 
 }
 
-String dependency(String group, String name, String version) {
+private static String dependency(String group, String name, String version) {
   return "${group}:${name}:${version}"
 }

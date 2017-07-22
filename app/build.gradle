@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
 
@@ -17,9 +19,15 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+  }
 }
 
 dependencies {
+
+  compile kotlinStdlib7
 
   compile supportDependencies.appCompat
   compile supportDependencies.design
@@ -30,12 +38,12 @@ dependencies {
   compile squareDependencies.picasso
 
   compile             butterknife
-  annotationProcessor butterknifeCompiler
+  kapt butterknifeCompiler
 
   compile rxDependencies.rxJava
   compile rxDependencies.rxAndroid
 
   compile             daggerDependencies.dagger
-  annotationProcessor daggerDependencies.daggerCompiler
+  kapt daggerDependencies.daggerCompiler
   provided            daggerDependencies.daggerAnnotations
 }
