@@ -24,5 +24,4 @@ class BooksActivity : BaseFragmentActivity() {
   override fun getFragmentInstance() = BooksFragment.newInstance()
 
   override fun getLayoutResId() = R.layout.books_activity
-
 }
