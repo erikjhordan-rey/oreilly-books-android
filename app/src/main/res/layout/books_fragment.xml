@@ -28,8 +28,8 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       app:layout_behavior="@string/appbar_scrolling_view_behavior"
-      tools:context=".view.activity.OreillyActivity"
-      tools:showIn="@layout/oreilly_activity"
+      tools:context="oreilly_free_books.BooksActivity"
+      tools:showIn="@layout/books_activity"
       >
 
     <TextView

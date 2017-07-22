@@ -37,8 +37,7 @@ dependencies {
   compile squareDependencies.okHttp
   compile squareDependencies.picasso
 
-  compile butterknife
-  kapt butterknifeCompiler
+  compile baseComponents
 
   compile rxDependencies.rxJava
   compile rxDependencies.rxAndroid
