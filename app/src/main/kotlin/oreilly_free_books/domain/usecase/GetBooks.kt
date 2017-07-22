@@ -6,7 +6,7 @@ import oreilly_free_books.domain.repository.Repository
 import javax.inject.Inject
 
 
-open class GetBooks @Inject constructor(val repository: Repository) {
+open class GetBooks @Inject constructor(private val repository: Repository) {
 
   fun execute(): Single<List<Book>> {
     return repository.getBooks()

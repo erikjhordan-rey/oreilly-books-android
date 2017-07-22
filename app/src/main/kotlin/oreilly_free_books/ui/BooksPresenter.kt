@@ -8,7 +8,7 @@ import oreilly_free_books.domain.usecase.GetBooks
 import javax.inject.Inject
 
 
-class BooksPresenter @Inject constructor(val getBooks: GetBooks) : BasePresenterLoader<BooksView>() {
+class BooksPresenter @Inject constructor(private val getBooks: GetBooks) : BasePresenterLoader<BooksView>() {
 
   private val compositeDisposable = CompositeDisposable()
 
