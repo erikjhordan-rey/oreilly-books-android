@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Oreilly-Free-Books</string>
-    <string name="large_text">
+  <string name="app_name">Oreilly Books</string>
+  <string name="books_title">O\'reilly Free Books</string>
+  <string name="large_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -90,10 +91,10 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- menu -->
-    <string name="menu_books">Books</string>
-    <string name="menu_downloads">Downloads</string>
+  <!-- menu -->
+  <string name="menu_books">Books</string>
+  <string name="menu_downloads">Downloads</string>
 </resources>

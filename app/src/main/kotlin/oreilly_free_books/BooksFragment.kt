@@ -16,8 +16,10 @@
 
 package oreilly_free_books
 
+import android.view.View
 import erikjhordanrey.base_components.view.BaseFragment
 import io.github.erikcaffrey.oreilly_free_books.R
+import kotlinx.android.synthetic.main.books_fragment.*
 
 class BooksFragment : BaseFragment() {
 
@@ -26,5 +28,15 @@ class BooksFragment : BaseFragment() {
   }
 
   override fun getLayoutResId() = R.layout.books_fragment
+
+  override fun initFragment(view: View) {
+    super.initFragment(view)
+    setSupportActionBarOnFragment(toolbar)
+    initToolbar()
+  }
+
+  fun initToolbar() {
+    supportActionBar?.title = getString(R.string.books_title)
+  }
 
 }
