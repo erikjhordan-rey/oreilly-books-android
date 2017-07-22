@@ -1,12 +1,26 @@
-package oreilly_free_books
+/*
+ * Copyright (C) 2017 Erik Jhordan Rey.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
+package oreilly_free_books.ui
 
 import io.reactivex.Single
 import oreilly_free_books.domain.model.Book
 import oreilly_free_books.domain.repository.Repository
 import oreilly_free_books.domain.usecase.GetBooks
-import oreilly_free_books.ui.BooksPresenter
-import oreilly_free_books.ui.BooksView
+import oreilly_free_books.utils.RxAndroidRule
 import org.junit.Before
 import org.junit.ClassRule
 import org.junit.Rule
@@ -27,9 +41,8 @@ class BooksPresenterTest {
     private val ANY_CATEGORY = "_category"
     private val ANY_SUBCATEGORY = "_subCategory"
 
-
     @ClassRule @JvmField
-    val blockingRxAndroidTestRule = RxAndroidTestRule()
+    val blockingRxAndroidTestRule = RxAndroidRule()
   }
 
   @Rule @JvmField
@@ -85,8 +98,10 @@ class BooksPresenterTest {
   private fun givenABookListWithData(): List<Book> {
     val bookList = ArrayList<Book>()
     (1..10).mapTo(bookList) {
-      Book(it.toString(), ANY_TITLE, ANY_DESCRIPTION, ANY_IMAGE,
-          ANY_URL, ANY_CATEGORY, ANY_SUBCATEGORY, emptyList())
+      Book(it.toString(), ANY_TITLE,
+          ANY_DESCRIPTION, ANY_IMAGE,
+          ANY_URL, ANY_CATEGORY,
+          ANY_SUBCATEGORY, emptyList())
     }
     given(getBooks.execute()).willReturn(Single.just(bookList))
     return bookList

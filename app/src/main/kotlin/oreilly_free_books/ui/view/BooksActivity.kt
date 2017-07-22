@@ -1,5 +1,3 @@
-package oreilly_free_books.ui.view
-
 /*
  * Copyright (C) 2017 Erik Jhordan Rey.
  *
@@ -15,6 +13,8 @@ package oreilly_free_books.ui.view
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package oreilly_free_books.ui.view
 
 import erikjhordanrey.base_components.view.BaseFragmentActivity
 import io.github.erikcaffrey.oreilly_free_books.R
