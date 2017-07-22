@@ -23,6 +23,7 @@ android {
 
   sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
   }
 }
 
@@ -46,4 +47,7 @@ dependencies {
   compile daggerDependencies.dagger
   kapt daggerDependencies.daggerCompiler
   provided daggerDependencies.daggerAnnotations
+
+  testCompile testDependencies.junit
+  testCompile testDependencies.mockitoCore
 }

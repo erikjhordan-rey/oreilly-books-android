@@ -8,7 +8,7 @@
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
     <activity
-        android:name="oreilly_free_books.BooksActivity"
+        android:name="oreilly_free_books.ui.view.BooksActivity"
         android:label="@string/app_name">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>

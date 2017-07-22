@@ -1,5 +1,3 @@
-package oreilly_free_books
-
 /*
  * Copyright (C) 2017 Erik Jhordan Rey.
  *
@@ -16,12 +14,29 @@ package oreilly_free_books
  * limitations under the License.
  */
 
-import erikjhordanrey.base_components.view.BaseFragmentActivity
+package oreilly_free_books.ui.view
+
+import android.view.View
+import erikjhordanrey.base_components.view.BaseFragment
 import io.github.erikcaffrey.oreilly_free_books.R
+import kotlinx.android.synthetic.main.books_fragment.*
 
-class BooksActivity : BaseFragmentActivity() {
+class BooksFragment : BaseFragment() {
 
-  override fun getFragmentInstance() = BooksFragment.newInstance()
+  companion object {
+    fun newInstance() = BooksFragment()
+  }
 
-  override fun getLayoutResId() = R.layout.books_activity
+  override fun getLayoutResId() = R.layout.books_fragment
+
+  override fun initFragment(view: View) {
+    super.initFragment(view)
+    setSupportActionBarOnFragment(toolbar)
+    initToolbar()
+  }
+
+  fun initToolbar() {
+    supportActionBar?.title = getString(R.string.books_title)
+  }
+
 }

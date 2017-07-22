@@ -1,4 +1,4 @@
-package oreilly_free_books
+package oreilly_free_books.ui.ext
 
 import android.app.Activity
 import android.support.annotation.IdRes
