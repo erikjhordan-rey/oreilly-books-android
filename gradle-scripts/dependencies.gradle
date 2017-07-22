@@ -80,6 +80,17 @@ ext{
   baseComponents = dependency(erikcaffreyPackage, 'base-components' , baseComponentsVersion)
 
 
+  junitPackage = 'junit'
+  junitVersion = '4.12'
+  mockitoPackage = 'org.mockito'
+  mockitoVersion = '2.8.47'
+
+  testDependencies = [
+      junit             : dependency(junitPackage, 'junit', junitVersion),
+      mockitoCore       : dependency(mockitoPackage, 'mockito-core' , mockitoVersion)
+  ]
+
+
 }
 
 private static String dependency(String pack, String artifact, String version) {

@@ -1,5 +1,3 @@
-package oreilly_free_books
-
 /*
  * Copyright (C) 2017 Erik Jhordan Rey.
  *
@@ -16,12 +14,21 @@ package oreilly_free_books
  * limitations under the License.
  */
 
-import erikjhordanrey.base_components.view.BaseFragmentActivity
-import io.github.erikcaffrey.oreilly_free_books.R
+package oreilly_free_books.ui.ext
 
-class BooksActivity : BaseFragmentActivity() {
+import android.app.Activity
+import android.support.annotation.IdRes
+import android.view.View
 
-  override fun getFragmentInstance() = BooksFragment.newInstance()
-
-  override fun getLayoutResId() = R.layout.books_activity
+@Suppress("UNCHECKED_CAST")
+fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
+  return noneLazy { findViewById(idRes) as T }
 }
+
+@Suppress("UNCHECKED_CAST")
+fun <T : View> View.bind(@IdRes idRes: Int): Lazy<T> {
+  return noneLazy { findViewById(idRes) as T }
+}
+
+private fun <T> noneLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
+

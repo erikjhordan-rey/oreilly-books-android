@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package oreilly_free_books
+package oreilly_free_books.ui.view
 
 import android.view.View
 import erikjhordanrey.base_components.view.BaseFragment
