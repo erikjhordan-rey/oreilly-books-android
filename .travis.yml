@@ -13,6 +13,8 @@ android:
      - extra-android-m2repository
      - extra-google-android-support
      - android-25
+     - build-tools-26.0.0
+     - android-26
 
 licenses:
     - 'android-sdk-preview-license-.+'

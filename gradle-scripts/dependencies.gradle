@@ -83,6 +83,6 @@ ext{
 
 }
 
-private static String dependency(String group, String name, String version) {
-  return "${group}:${name}:${version}"
+private static String dependency(String pack, String artifact, String version) {
+  return "${pack}:${artifact}:${version}"
 }
