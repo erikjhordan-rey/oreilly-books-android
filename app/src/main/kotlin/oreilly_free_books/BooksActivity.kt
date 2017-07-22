@@ -1,3 +1,5 @@
+package oreilly_free_books
+
 /*
  * Copyright (C) 2017 Erik Jhordan Rey.
  *
@@ -14,27 +16,13 @@
  * limitations under the License.
  */
 
-package io.github.erikcaffrey.oreilly_free_books.di.modules;
+import erikjhordanrey.base_components.view.BaseFragmentActivity
+import io.github.erikcaffrey.oreilly_free_books.R
 
-import android.app.Activity;
-import android.content.Context;
-import dagger.Module;
-import dagger.Provides;
-import io.github.erikcaffrey.oreilly_free_books.di.scopes.ActivityContext;
+class BooksActivity : BaseFragmentActivity() {
 
-@Module public class ActivityModule {
+  override fun getFragmentInstance() = BooksFragment.newInstance()
 
-  private final Activity activity;
+  override fun getLayoutResId() = R.layout.books_activity
 
-  public ActivityModule(Activity activity) {
-    this.activity = activity;
-  }
-
-  @Provides @ActivityContext Context provideActivityContext() {
-    return this.activity;
-  }
-
-  @Provides Activity provideActivity() {
-    return this.activity;
-  }
 }

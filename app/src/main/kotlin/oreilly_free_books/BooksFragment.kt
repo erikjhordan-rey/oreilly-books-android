@@ -14,7 +14,17 @@
  * limitations under the License.
  */
 
-package io.github.erikcaffrey.oreilly_free_books.domain;
+package oreilly_free_books
 
-public class UseCase {
+import erikjhordanrey.base_components.view.BaseFragment
+import io.github.erikcaffrey.oreilly_free_books.R
+
+class BooksFragment : BaseFragment() {
+
+  companion object {
+    fun newInstance() = BooksFragment()
+  }
+
+  override fun getLayoutResId() = R.layout.books_fragment
+
 }
