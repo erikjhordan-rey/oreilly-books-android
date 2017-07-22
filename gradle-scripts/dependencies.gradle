@@ -75,16 +75,10 @@ ext{
 
   //Elemental dependencies
 
-
   erikcaffreyPackage = 'com.github.erikcaffrey'
   baseComponentsVersion = '1.0.0'
   baseComponents = dependency(erikcaffreyPackage, 'base-components' , baseComponentsVersion)
 
-  jakeWhartonPackage = 'com.jakewharton'
-  butterknifeVersion = '8.4.0'
-
-  butterknife = dependency(jakeWhartonPackage, 'butterknife', butterknifeVersion)
-  butterknifeCompiler = dependency(jakeWhartonPackage, 'butterknife-compiler', butterknifeVersion)
 
 }
 
