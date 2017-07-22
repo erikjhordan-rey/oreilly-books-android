@@ -37,13 +37,13 @@ dependencies {
   compile squareDependencies.okHttp
   compile squareDependencies.picasso
 
-  compile             butterknife
+  compile butterknife
   kapt butterknifeCompiler
 
   compile rxDependencies.rxJava
   compile rxDependencies.rxAndroid
 
-  compile             daggerDependencies.dagger
+  compile daggerDependencies.dagger
   kapt daggerDependencies.daggerCompiler
-  provided            daggerDependencies.daggerAnnotations
+  provided daggerDependencies.daggerAnnotations
 }

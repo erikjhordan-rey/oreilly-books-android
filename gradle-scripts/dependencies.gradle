@@ -5,10 +5,9 @@ ext{
   minSdkVersion = 15
   targetSdkVersion = 25
   compileSdkVersion = 25
-  buildToolsVersion = '25.0.2'
+  buildToolsVersion = '26.0.0'
   versionCode = 1
   versionName = '1.0'
-
 
   // kotlin
 
@@ -19,7 +18,7 @@ ext{
   // Support Libraries
 
   supportPackage = 'com.android.support'
-  supportVersion = '25.1.0'
+  supportVersion = '25.3.1'
 
   supportDependencies = [
       appCompat : dependency(supportPackage, 'appcompat-v7', supportVersion),
