@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
+
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -9,10 +9,12 @@ android {
   buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
+    applicationId "io.github.erikcaffrey.oreilly_free_books"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
     versionCode rootProject.ext.versionCode
     versionName rootProject.ext.versionName
+    vectorDrawables.useSupportLibrary = true
   }
   buildTypes {
     release {
@@ -35,6 +37,7 @@ dependencies {
   compile supportDependencies.design
 
   compile squareDependencies.retrofit
+  compile squareDependencies.adapterRxJava
   compile squareDependencies.gsonConverter
   compile squareDependencies.okHttp
   compile squareDependencies.picasso
@@ -44,9 +47,9 @@ dependencies {
   compile rxDependencies.rxJava
   compile rxDependencies.rxAndroid
 
-  compile daggerDependencies.dagger
-  kapt daggerDependencies.daggerCompiler
-  provided daggerDependencies.daggerAnnotations
+  String daggerVersion = '2.10'
+  compile "com.google.dagger:dagger:$daggerVersion"
+  kapt "com.google.dagger:dagger-compiler:$daggerVersion"
 
   testCompile testDependencies.junit
   testCompile testDependencies.mockitoCore
