@@ -31,6 +31,8 @@ ext{
   retrofitPackage = 'com.squareup.retrofit2'
   retrofitVersion = '2.3.0'
 
+  adapterRxJavaVersion = '2.2.0'
+
   okhttpPackage = 'com.squareup.okhttp3'
   okhttpVersion = '3.8.1'
   okhttpLoggingVersion = '3.6.0'
@@ -40,6 +42,7 @@ ext{
 
   squareDependencies = [
       retrofit          : dependency(retrofitPackage, 'retrofit', retrofitVersion),
+      adapterRxJava     : dependency(retrofitPackage, 'adapter-rxjava2', adapterRxJavaVersion),
       gsonConverter     : dependency(retrofitPackage, 'converter-gson', retrofitVersion),
       loggingInterceptor: dependency(okhttpPackage, 'logging-interceptor', okhttpLoggingVersion),
       okHttp            : dependency(okhttpPackage, 'okhttp', okhttpVersion),
@@ -63,9 +66,8 @@ ext{
   daggerPackage = 'com.google.dagger'
   javaxPackage = 'javax.annotation'
 
-  daggerVersion = '2.8'
+  daggerVersion = '2.10'
   javaxVersion = '1.0'
-
 
   daggerDependencies = [
       dagger             : dependency(daggerPackage,'dagger',daggerVersion),
