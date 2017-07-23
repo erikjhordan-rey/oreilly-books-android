@@ -29,10 +29,11 @@ ext{
   // Square Libraries
 
   retrofitPackage = 'com.squareup.retrofit2'
-  retrofitVersion = '2.1.0'
+  retrofitVersion = '2.3.0'
 
   okhttpPackage = 'com.squareup.okhttp3'
-  okhttpVersion = '3.4.1'
+  okhttpVersion = '3.8.1'
+  okhttpLoggingVersion = '3.6.0'
 
   picassoPackage = 'com.squareup.picasso'
   picassoVersion = '2.5.2'
@@ -40,12 +41,12 @@ ext{
   squareDependencies = [
       retrofit          : dependency(retrofitPackage, 'retrofit', retrofitVersion),
       gsonConverter     : dependency(retrofitPackage, 'converter-gson', retrofitVersion),
-      loggingInterceptor: dependency(okhttpPackage, 'logging-interceptor', okhttpVersion),
+      loggingInterceptor: dependency(okhttpPackage, 'logging-interceptor', okhttpLoggingVersion),
       okHttp            : dependency(okhttpPackage, 'okhttp', okhttpVersion),
       picasso           : dependency(picassoPackage, 'picasso', picassoVersion)
   ]
 
-  //RX Libraries dependencies
+  //RX dependencies
 
   reactivePackage = 'io.reactivex.rxjava2'
 
@@ -57,7 +58,7 @@ ext{
       rxAndroid: dependency(reactivePackage, 'rxandroid', rxAndroidVersion)
   ]
 
-  //Dagger Libraries dependencies
+  //Dagger dependencies
 
   daggerPackage = 'com.google.dagger'
   javaxPackage = 'javax.annotation'
@@ -80,16 +81,22 @@ ext{
   baseComponents = dependency(erikcaffreyPackage, 'base-components' , baseComponentsVersion)
 
 
+  //Testing dependencies
+
   junitPackage = 'junit'
   junitVersion = '4.12'
+
   mockitoPackage = 'org.mockito'
   mockitoVersion = '2.8.47'
 
+  mockWebServerPackage = 'com.squareup.okhttp3'
+  mockWebServerVersion = '3.8.1'
+
   testDependencies = [
       junit             : dependency(junitPackage, 'junit', junitVersion),
-      mockitoCore       : dependency(mockitoPackage, 'mockito-core' , mockitoVersion)
+      mockitoCore       : dependency(mockitoPackage, 'mockito-core' , mockitoVersion),
+      mockWebServer     : dependency(mockWebServerPackage, 'mockwebserver', mockWebServerVersion)
   ]
-
 
 }
 

@@ -50,4 +50,5 @@ dependencies {
 
   testCompile testDependencies.junit
   testCompile testDependencies.mockitoCore
+  testCompile testDependencies.mockWebServer
 }
