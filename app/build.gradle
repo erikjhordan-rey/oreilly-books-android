@@ -47,9 +47,8 @@ dependencies {
   compile rxDependencies.rxJava
   compile rxDependencies.rxAndroid
 
-  String daggerVersion = '2.10'
-  compile "com.google.dagger:dagger:$daggerVersion"
-  kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+  compile daggerDependencies.dagger
+  kapt daggerDependencies.daggerCompiler
 
   testCompile testDependencies.junit
   testCompile testDependencies.mockitoCore

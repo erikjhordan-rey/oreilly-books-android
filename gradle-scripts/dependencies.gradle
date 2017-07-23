@@ -67,12 +67,10 @@ ext{
   javaxPackage = 'javax.annotation'
 
   daggerVersion = '2.10'
-  javaxVersion = '1.0'
 
   daggerDependencies = [
       dagger             : dependency(daggerPackage,'dagger',daggerVersion),
-      daggerCompiler     : dependency(daggerPackage,'dagger-compiler',daggerVersion),
-      daggerAnnotations  : dependency(javaxPackage,'jsr250-api',javaxVersion)
+      daggerCompiler     : dependency(daggerPackage,'dagger-compiler',daggerVersion)
   ]
 
 
