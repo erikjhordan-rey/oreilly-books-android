@@ -33,7 +33,7 @@ data class BookEntity(
     private const val TITLE = "title"
     private const val DESCRIPTION = "description"
     private const val THUMBNAIL = "thumbnail"
-    private const val CATEGORY = "category"
+    private const val CATEGORY = "categoryTitle"
     private const val SUBCATEGORY = "subcategory"
     private const val URL = "url"
     private const val MOBI = "mobi"

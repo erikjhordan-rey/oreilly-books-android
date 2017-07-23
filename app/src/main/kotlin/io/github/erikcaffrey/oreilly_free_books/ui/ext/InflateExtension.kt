@@ -16,19 +16,13 @@
 
 package io.github.erikcaffrey.oreilly_free_books.ui.ext
 
-import android.app.Activity
-import android.support.annotation.IdRes
+import android.support.annotation.LayoutRes
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 
-@Suppress("UNCHECKED_CAST")
-fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
-  return noneLazy { findViewById(idRes) as T }
+fun ViewGroup.inflate(@LayoutRes layoutRes: Int, attachToRoot: Boolean = false): View {
+  return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
 }
 
-@Suppress("UNCHECKED_CAST")
-fun <T : View> View.bind(@IdRes idRes: Int): Lazy<T> {
-  return noneLazy { findViewById(idRes) as T }
-}
-
-private fun <T> noneLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
 

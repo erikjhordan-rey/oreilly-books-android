@@ -18,10 +18,11 @@ package io.github.erikcaffrey.oreilly_free_books.ui
 
 import erikjhordanrey.base_components.view.BasePresenterLoader
 import io.github.erikcaffrey.oreilly_free_books.domain.model.Book
+import io.github.erikcaffrey.oreilly_free_books.ui.view.CategoryViewModel
 
 interface BooksUi : BasePresenterLoader.Ui {
 
-  fun showBooks(books: List<Book>)
+  fun showBooks(categoryViewModelList: List<CategoryViewModel>)
 
   fun showEmptyMessage()
 

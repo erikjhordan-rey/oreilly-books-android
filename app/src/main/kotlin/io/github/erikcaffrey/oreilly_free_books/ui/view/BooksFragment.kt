@@ -17,15 +17,16 @@
 package io.github.erikcaffrey.oreilly_free_books.ui.view
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.View
 import erikjhordanrey.base_components.view.BaseFragment
 import io.github.erikcaffrey.oreilly_free_books.R
 import io.github.erikcaffrey.oreilly_free_books.di.AppInitProvider
-import kotlinx.android.synthetic.main.books_fragment.*
-import io.github.erikcaffrey.oreilly_free_books.domain.model.Book
 import io.github.erikcaffrey.oreilly_free_books.ui.BooksPresenter
 import io.github.erikcaffrey.oreilly_free_books.ui.BooksUi
+import kotlinx.android.synthetic.main.books_fragment.*
+
 import javax.inject.Inject
 
 open class BooksFragment : BaseFragment(), BooksUi {
@@ -37,6 +38,8 @@ open class BooksFragment : BaseFragment(), BooksUi {
   override fun getLayoutResId() = R.layout.books_fragment
 
   @Inject lateinit var presenter: BooksPresenter
+
+  lateinit var adapter: CategoriesAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -52,18 +55,18 @@ open class BooksFragment : BaseFragment(), BooksUi {
   override fun initFragment(view: View) {
     super.initFragment(view)
     initToolbar()
+    initAdapter()
+    initRecycler()
   }
-
 
   override fun onDestroyView() {
     super.onDestroyView()
     presenter.terminate()
   }
 
-  override fun showBooks(books: List<Book>) {
-      for(b in books){
-        Log.d(BooksFragment::class.simpleName,b.title)
-      }
+  override fun showBooks(categoryViewModelList: List<CategoryViewModel>) {
+    adapter.addCategoryList(categoryViewModelList)
+    adapter.notifyDataSetChanged()
   }
 
   override fun showEmptyMessage() {
@@ -89,6 +92,15 @@ open class BooksFragment : BaseFragment(), BooksUi {
   fun initToolbar() {
     setSupportActionBarOnFragment(toolbar)
     supportActionBar?.title = getString(R.string.books_title)
+  }
+
+  fun initAdapter() {
+    adapter = CategoriesAdapter()
+  }
+
+  fun initRecycler() {
+    list_books.layoutManager = LinearLayoutManager(activity)
+    list_books.adapter = adapter
   }
 
 }
