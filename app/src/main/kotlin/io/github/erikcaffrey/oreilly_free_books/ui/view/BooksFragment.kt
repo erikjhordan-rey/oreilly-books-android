@@ -17,8 +17,10 @@
 package io.github.erikcaffrey.oreilly_free_books.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import erikjhordanrey.base_components.view.BaseFragment
+import io.github.erikcaffrey.oreilly_free_books.BooksApplication
 import io.github.erikcaffrey.oreilly_free_books.R
 import io.github.erikcaffrey.oreilly_free_books.di.AppInitProvider
 import kotlinx.android.synthetic.main.books_fragment.*
@@ -60,27 +62,29 @@ open class BooksFragment : BaseFragment(), BooksUi {
   }
 
   override fun showBooks(books: List<Book>) {
-
+      for(b in books){
+        Log.d(BooksFragment::class.simpleName,b.title)
+      }
   }
 
   override fun showEmptyMessage() {
-
+    Log.d(BooksFragment::class.simpleName, "Emty Message")
   }
 
   override fun showErrorMessage() {
-
+    Log.d(BooksFragment::class.simpleName, "An Error Occurred")
   }
 
   override fun showLoading() {
-
+    Log.d(BooksFragment::class.simpleName, "Show Loading")
   }
 
   override fun hideLoading() {
-
+    Log.d(BooksFragment::class.simpleName, "Hide Loading")
   }
 
   fun initDagger() {
-    AppInitProvider.appComponent.inject(this)
+    BooksApplication.appComponent.inject(this)
   }
 
   fun initToolbar() {

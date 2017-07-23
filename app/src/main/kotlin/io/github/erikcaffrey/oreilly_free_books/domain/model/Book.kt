@@ -23,8 +23,8 @@ data class Book(
     val description: String,
     val image: String,
     val url: String,
-    val category: String,
-    val subCategory: String,
+    val category: String? = "",
+    val subCategory: String? = "",
     val downloadUrls: List<String>
 ) {
 

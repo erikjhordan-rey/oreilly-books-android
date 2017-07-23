@@ -1,11 +1,11 @@
 package io.github.erikcaffrey.oreilly_free_books.domain
 
-import io.reactivex.Single
+import io.github.erikcaffrey.oreilly_free_books.RxAndroidRule
 import io.github.erikcaffrey.oreilly_free_books.data.BookEntity
 import io.github.erikcaffrey.oreilly_free_books.data.api.ApiBooksDataSource
 import io.github.erikcaffrey.oreilly_free_books.data.api.BooksService
 import io.github.erikcaffrey.oreilly_free_books.domain.repository.BooksRepository
-import io.github.erikcaffrey.oreilly_free_books.RxAndroidRule
+import io.reactivex.Single
 import org.junit.Before
 import org.junit.ClassRule
 import org.junit.Rule
@@ -25,6 +25,9 @@ class BooksRepositoryTest {
     private val ANY_URL = "_url"
     private val ANY_CATEGORY = "_category"
     private val ANY_SUBCATEGORY = "_subCategory"
+    private val ANY_MOBY = "_moby"
+    private val ANY_PDF = "_pdf"
+    private val ANY_EPUB = "_epub"
 
 
     @ClassRule @JvmField
@@ -34,14 +37,14 @@ class BooksRepositoryTest {
   @Rule @JvmField
   var mockitoRule = MockitoJUnit.rule()!!
 
+  @Mock lateinit var service: BooksService
   @Mock lateinit var dataSource: ApiBooksDataSource
 
   private lateinit var repository: BooksRepository
 
   @Before
   fun setUp() {
-
-    dataSource = ApiBooksDataSource(MocketRetrofitService())
+    dataSource = ApiBooksDataSource(service)
     repository = BooksRepository(dataSource)
   }
 
@@ -64,19 +67,10 @@ class BooksRepositoryTest {
       BookEntity(ANY_TITLE,
           ANY_DESCRIPTION, ANY_IMAGE,
           ANY_URL, ANY_CATEGORY,
-          ANY_SUBCATEGORY, "", "", "")
+          ANY_SUBCATEGORY, ANY_MOBY, ANY_PDF, ANY_EPUB)
     }
     given(dataSource.getBooks()).willReturn(Single.just(bookList))
     return bookList
-  }
-
-
-  open class MocketRetrofitService : BooksService {
-    override fun fetchBooks(): Single<List<BookEntity>> {
-      return Single.just(emptyList())
-    }
-
-
   }
 
 }
