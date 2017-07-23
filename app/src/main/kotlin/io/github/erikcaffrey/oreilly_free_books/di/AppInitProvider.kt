@@ -8,16 +8,17 @@ import android.net.Uri
 class AppInitProvider : ContentProvider() {
 
   companion object {
-//    lateinit var appComponent: AppComponent
+    lateinit var appComponent: AppComponent
   }
 
   override fun onCreate(): Boolean {
-    //initDagger()
+    initDagger()
     return false
   }
 
   fun initDagger() {
-     //appComponent = DaggerAppComponent.create()
+    appComponent = DaggerAppComponent.builder()
+        .appModule(AppModule()).apiModule(ApiModule()).build()
   }
 
   override fun insert(uri: Uri?, values: ContentValues?) = null!!

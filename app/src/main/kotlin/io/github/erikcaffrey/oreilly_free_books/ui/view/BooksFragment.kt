@@ -20,7 +20,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import erikjhordanrey.base_components.view.BaseFragment
-import io.github.erikcaffrey.oreilly_free_books.BooksApplication
 import io.github.erikcaffrey.oreilly_free_books.R
 import io.github.erikcaffrey.oreilly_free_books.di.AppInitProvider
 import kotlinx.android.synthetic.main.books_fragment.*
@@ -84,7 +83,7 @@ open class BooksFragment : BaseFragment(), BooksUi {
   }
 
   fun initDagger() {
-    BooksApplication.appComponent.inject(this)
+    AppInitProvider.appComponent.inject(this)
   }
 
   fun initToolbar() {
