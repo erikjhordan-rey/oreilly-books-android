@@ -17,10 +17,11 @@
 package io.github.erikcaffrey.oreilly_free_books.ui
 
 import erikjhordanrey.base_components.view.BasePresenterLoader
+import io.github.erikcaffrey.oreilly_free_books.domain.usecase.GetBooks
+import io.github.erikcaffrey.oreilly_free_books.ui.view.CategoryViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import io.github.erikcaffrey.oreilly_free_books.domain.usecase.GetBooks
 import javax.inject.Inject
 
 open class BooksPresenter @Inject constructor(private val getBooks: GetBooks) : BasePresenterLoader<BooksUi>() {
@@ -39,7 +40,10 @@ open class BooksPresenter @Inject constructor(private val getBooks: GetBooks) : 
           ui.hideLoading()
           when (it.isEmpty()) {
             true -> ui.showEmptyMessage()
-            else -> ui.showBooks(it)
+            else -> {
+              val categoryViewModelList = CategoryViewModel.Mapper.from(it)
+              ui.showBooks(categoryViewModelList)
+            }
           }
         }, { ui.hideLoading(); ui.showErrorMessage() })
 
