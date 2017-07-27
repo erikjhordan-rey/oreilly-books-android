@@ -20,7 +20,7 @@ class CategoriesHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
   private fun renderRecycler(books: List<Book>) {
     itemView.recycler.layoutManager =
         LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false)
-    itemView.recycler.onFlingListener = null
+    //itemView.recycler.onFlingListener = null
     itemView.recycler.adapter = BooksAdapter(books)
   }
 
