@@ -23,11 +23,29 @@ data class CategoryViewModel(
 
         // booksMap.put(key, books)
 
-
         bookList.forEach {
 
           if (it.category == key) {
-            books.add(it)
+
+            if (value.isNotEmpty()) {
+
+              for (subCategory in value) {
+
+                val subBooks = ArrayList<Book>()
+
+                bookList.forEach {
+                  if (it.subCategory == subCategory) {
+                    subBooks.add(it)
+                  }
+                }
+
+                booksMap.put(subCategory, subBooks)
+              }
+              //   books.add(it)
+
+            } else {
+              books.add(it)
+            }
           }
         }
 
