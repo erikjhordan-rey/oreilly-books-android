@@ -21,6 +21,7 @@ import io.github.erikcaffrey.oreilly_free_books.domain.model.Book
 import io.github.erikcaffrey.oreilly_free_books.domain.repository.BooksRepository
 import io.github.erikcaffrey.oreilly_free_books.domain.usecase.GetBooks
 import io.github.erikcaffrey.oreilly_free_books.RxAndroidRule
+import io.github.erikcaffrey.oreilly_free_books.ui.view.CategoryViewModel
 import org.junit.Before
 import org.junit.ClassRule
 import org.junit.Rule
@@ -64,12 +65,13 @@ class BooksPresenterTest {
   @Test
   fun shouldShowTheBookList() {
     val bookList = givenABookListWithData()
+    val categoryViewModel = CategoryViewModel.Mapper.from(bookList)
 
     presenter.start()
 
     verify(ui).showLoading()
     verify(ui).hideLoading()
-    verify(ui).showBooks(bookList)
+    verify(ui).showBooks(categoryViewModel)
   }
 
   @Test
